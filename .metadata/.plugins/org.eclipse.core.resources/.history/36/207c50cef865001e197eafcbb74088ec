@@ -1,0 +1,27 @@
+package com.example.omnitrix.network;
+
+import java.util.Date;
+import java.util.List;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name="network_performance")
+public class Netdata {
+	@Id
+	Integer sno;
+	Date timestamp;
+	String region;
+	Double bandwidth_usage;
+	Double network_latency;
+	Double packet_loss;
+	Double jitter;
+	Double bit_rate;
+	Double call_setup_time;
+	
+	
+	
+	
+}

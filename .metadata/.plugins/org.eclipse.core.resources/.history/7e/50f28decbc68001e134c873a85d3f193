@@ -1,0 +1,41 @@
+package com.example.omnitrix.subscribe;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name="subscriber_data")
+public class Subscribedata {
+
+	String DateofJoining;
+	String CustomerID;
+	int TenureinMonths;
+	String Offer;
+	String PhoneService;
+	String MultipleLines;
+	String InternetService;
+	String InternetType;
+	String OnlineSecurity;
+	String OnlineBackup;
+	String DeviceProtectionPlan;
+	String PremiumTechSupport;
+	String StreamingTV;
+	String StreamingMovies;
+	String StreamingMusic;
+	String UnlimitedData;
+	String Contract;
+	Double MonthlyCharge;
+	Double TotalCharges;
+	Double TotalRefunds;
+	Double TotalExtraDataCharges;
+	Double TotalLongDistanceCharges;
+	Double TotalRevenue;
+	String CustomerStatus;
+	String ChurnCategory;
+	String ChurnReason;
+	
+	
+	
+	
+	
+}

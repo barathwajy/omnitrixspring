@@ -1,0 +1,14 @@
+package com.example.omnitrix.subscribe;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name="subscriber_data")
+public class Subscribedata {
+
+	String DateofJoining;
+	String Customer ID;
+	
+	
+}

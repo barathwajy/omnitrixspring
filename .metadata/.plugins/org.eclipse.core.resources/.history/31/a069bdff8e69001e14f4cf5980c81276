@@ -1,0 +1,30 @@
+package com.example.omnitrix.user;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@CrossOrigin
+
+public class Usercontroller {
+	
+	@Autowired
+    private Userservice userService;
+    
+    @Autowired
+    private User_repo userRepository;
+    
+    static String otp="";
+    
+    @GetMapping("/forgot/{mail}")
+    public String getuser(@PathVariable String mail) {
+
+    	System.out.println("hello");
+    	return userService.otp(mail);
+
+    }
+
+}

@@ -1,0 +1,36 @@
+package com.example.omnitrix.network;
+
+import java.util.Date;
+import java.util.List;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name="network_performance")
+public class Netdata {
+	
+	List<Double> bandwidth_usage;
+	List<Double> network_latency;
+	List<Double> packet_loss;
+	List<Double> jitter;
+	List<Double> bit_rate;
+	List<Double> call_setup_time;
+	List<String> region;
+	List<Date> timestamp;
+	List<Integer> sno;
+	public Netdata(List<Double> bandwidth_usage, List<Double> network_latency, List<Double> packet_loss,
+			List<Double> jitter, List<Double> bit_rate, List<Double> call_setup_time, List<String> region,
+			List<Date> timestamp) {
+		super();
+		this.bandwidth_usage = bandwidth_usage;
+		this.network_latency = network_latency;
+		this.packet_loss = packet_loss;
+		this.jitter = jitter;
+		this.bit_rate = bit_rate;
+		this.call_setup_time = call_setup_time;
+		this.region = region;
+		this.timestamp = timestamp;
+	}
+	
+}

@@ -1,0 +1,19 @@
+package com.example.omnitrix.serviceutil;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name="subscriber_data")
+public class Serviceutildata {
+	@Id
+	Integer Sno;
+	String Date;
+	String TimeofDay;
+	Integer CallsMade;
+	Integer SMS;
+	Double DataUsage;
+	
+
+}
