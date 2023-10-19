@@ -1,5 +1,6 @@
 package com.example.omnitrix.subscribe;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
@@ -7,36 +8,87 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name="subscriber_data")
 public class Subscribedata {
-
+	
+    @Column(name = "dateofjoining") 
 	String DateofJoining;
 	
 	@Id
+    @Column(name = "customerid") 
 	String CustomerID;
+	
+    @Column(name = "tenureinmonths") 
 	Integer TenureinMonths;
+    
+    @Column(name = "offer")
 	String Offer;
+    
+    @Column(name = "phoneservice")
 	String PhoneService;
+    
+    @Column(name = "multiplelines")
 	String MultipleLines;
+    
+    @Column(name = "internetservice")
 	String InternetService;
+    
+    @Column(name = "internettype")
 	String InternetType;
+    
+    @Column(name = "onlinesecurity")
 	String OnlineSecurity;
+    
+    @Column(name = "onlinebackup")
 	String OnlineBackup;
+    
+    @Column(name = "deviceprotectionplan")
 	String DeviceProtectionPlan;
+    
+    @Column(name = "premiumtechsupport")
 	String PremiumTechSupport;
+    
+    @Column(name = "streamingtv")
 	String StreamingTV;
+    
+    @Column(name = "streamingmovies")
 	String StreamingMovies;
+    
+    @Column(name = "streamingmusic")
 	String StreamingMusic;
+    
+    @Column(name = "unlimiteddata")
 	String UnlimitedData;
+    
+    @Column(name = "contract")
 	String Contract;
+    
+    @Column(name = "monthlycharge")
 	Double MonthlyCharge;
+    
+    @Column(name = "totalcharges")
 	Double TotalCharges;
+    
+    @Column(name = "totalrefunds")
 	Double TotalRefunds;
+    
+    @Column(name = "totalextradatacharges")
 	Double TotalExtraDataCharges;
+    
+    @Column(name = "totallongdistancecharges")
 	Double TotalLongDistanceCharges;
+    
+    @Column(name = "totalrevenue")
 	Double TotalRevenue;
+    
+    @Column(name = "customerstatus")
 	String CustomerStatus;
+    
+    @Column(name = "churncategory",columnDefinition="TEXT")
 	String ChurnCategory;
+    
+    @Column(name = "churnreason")
 	String ChurnReason;
 	
+    
 	// Getters And Setters
 	public String getDateofJoining() {
 		return DateofJoining;

@@ -6,17 +6,17 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @CrossOrigin
-
 public class Usercontroller {
 	
 	@Autowired
     private Userservice userService;
-    
+    	
     @Autowired
     private User_repo userRepository;
     
@@ -53,6 +53,15 @@ public class Usercontroller {
     	@PostMapping("/signup")
         public User_data signup(@RequestBody User_data loginRequest) {
         	return userRepository.save(loginRequest);
+        }
+    	
+    	@PutMapping("/updatepassword/{email}/{password}")
+        public String passwordupdate(@PathVariable("email") String email,@PathVariable("password") String password)
+        {
+        	User_data user1=userRepository.findByEmail(email);
+        	user1.setPassword(password);
+        	userRepository.save(user1);
+        	return JSONObject.quote("password updated");
         }
 
 }

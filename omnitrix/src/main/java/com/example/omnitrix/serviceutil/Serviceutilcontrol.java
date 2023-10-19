@@ -11,13 +11,13 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin
 public class Serviceutilcontrol {
 
-//	@Autowired
-//	private Serviceutildata servutildata;
-//	
-//	@GetMapping("/servutildata")
-//	public List<Serviceutildata> getdata()
-//	{		
-//		return servutildata.findAll();
-//	}
-//}
+	@Autowired
+	private Serviceutilrepo servutilrepo;
+	
+	@GetMapping("/servutildata")
+	public List<Serviceutildata> getdata()
+	{		
+		return servutilrepo.findAll();
+	}
 }
+

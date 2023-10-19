@@ -1,0 +1,58 @@
+package com.example.omnitrix.user;
+
+import org.json.JSONObject;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@CrossOrigin
+
+public class Usercontroller {
+	
+	@Autowired
+    private Userservice userService;
+    
+    @Autowired
+    private User_repo userRepository;
+    
+    static String otp="";
+    
+    @GetMapping("/forgot/{mail}")
+    public String getuser(@PathVariable String mail) {
+
+    	System.out.println("hello");
+    	return userService.otp(mail);
+
+    }
+    
+    @GetMapping("/getotpdb")
+    public String getotpbd()
+    {
+    	return String.valueOf(otp);
+    }
+    
+    @GetMapping("/login/{email}/{password}")
+    public String login(@PathVariable("email") String email,@PathVariable("password") String password) {
+    	
+    	if(userService.loginvalidation(email, password)!=null)
+    	{
+    		return JSONObject.quote("Login Successfull");
+    	}else
+    	{
+//    		return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Login failed");
+    		return JSONObject.quote("Login Failed");
+
+
+    	}
+    }
+    	@PostMapping("/signup")
+        public User_data signup(@RequestBody User_data loginRequest) {
+        	return userRepository.save(loginRequest);
+        }
+
+}
